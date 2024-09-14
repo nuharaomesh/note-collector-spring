@@ -1,7 +1,9 @@
 package lk.ijse.notecollectorspring.controller;
 
 import lk.ijse.notecollectorspring.dto.impl.NoteDTO;
+import lk.ijse.notecollectorspring.service.NoteService;
 import lk.ijse.notecollectorspring.util.AppUtil;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -14,6 +16,9 @@ import java.util.List;
 @RestController
 @RequestMapping("api/v1/notes")
 public class NoteController {
+
+    @Autowired
+    NoteService noteService;
 
     public NoteDTO getSelectedNote() {
         return null;
@@ -31,10 +36,10 @@ public class NoteController {
     }
 
     public String updateNote(String noteID, NoteDTO dto) {
-        return "Note saved successfully";
+        return "Note Updated successfully";
     }
 
     public String deleteNote(String noteID) {
-        return "Note saved successfully";
+        return "Note Deleted successfully";
     }
 }
